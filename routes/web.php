@@ -8,6 +8,7 @@ use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\SalesReportController;
 use App\Http\Controllers\PromotionController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\CartController;
 use App\Models\Product;
 
 Route::get('/', function () {
@@ -51,6 +52,19 @@ Route::get('/reservas', function() {
 Route::get('/menu', function() {
     return view('pages.menu');
 })->name('menu');
+
+Route::get('/menu', [ProductController::class, 'menu'])->name('menu');
+
+
+
+Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
+Route::post('/cart/add/{id}', [CartController::class, 'add'])->name('cart.add');
+Route::post('/cart/update', [CartController::class, 'update'])->name('cart.update');
+Route::get('/cart/remove/{id}', [CartController::class, 'remove'])->name('cart.remove');
+Route::get('/cart/clear', [CartController::class, 'clear'])->name('cart.clear');
+
+
+
 
 
 // Rutas para administradores
