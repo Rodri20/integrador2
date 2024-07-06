@@ -24,8 +24,6 @@ class ProductController extends Controller
 {
     return view('admin.products.show', compact('product'));
 }
-    
-
     public function store(Request $request)
     {
         $validatedData = $request->validate([
@@ -84,5 +82,11 @@ class ProductController extends Controller
     {
         $product->delete();
         return redirect()->route('admin.products.index')->with('success', 'Producto eliminado con éxito');
+    }
+
+    public function menu()
+    {
+        $products = Product::all(); // Obtener todos los productos
+        return view('pages.menu', compact('products'));
     }
 }
