@@ -55,35 +55,36 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-0 pe-4">
-                <a href="{{ url('/') }}" class="nav-item nav-link active"><i class="fa-solid fa-house fa-lg" style="color: #fea116;"></i></a>
-                <a href="{{ url('/Nosotros') }}" class="nav-item nav-link">Nosotros</a>
-                <a href="{{ url('/servicios') }}" class="nav-item nav-link">Servicios</a>
-                <a href="{{ url('/menu') }}" class="nav-item nav-link">Nuestra Carta</a>
+                <a href="{{ url('/') }}" class="btn btn-sm btn-outline-light" style="border-bottom-width: 0em; height: max-content; border: none; margin-top: 30px;     text-align: left;"><i class="fa-solid fa-house fa-lg" style="color: #fea116; "></i></a>
+                <a href="{{ url('/nosotros') }}" class="btn btn-sm btn-outline-light" style="border-bottom-width: 0em; height: max-content; border: none; margin-top: 30px;     text-align: left;">Nosotros</a>
+                <a href="{{ url('/servicios') }}" class="btn btn-sm btn-outline-light" style="border-bottom-width: 0em; height: max-content; border: none; margin-top: 30px;     text-align: left;">Servicios</a>
+                <a href="{{ url('/menu') }}" class="btn btn-sm btn-outline-light" style="border-bottom-width: 0em; height: max-content; border: none; margin-top: 30px;     text-align: left;">Nuestra Carta</a>
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Blog</a>
-                    <div class="dropdown-menu m-0">
-                        <a href="{{ url('/nuestro_equipo') }}" class="dropdown-item">Nuestro Equipo</a>
-                        <a href="{{ url('/testimonios') }}" class="dropdown-item">Testimonios</a>
+                    <a href="#" class="nav-link dropdown-toggle"
+                    style="border-bottom-width: 0em; height: max-content; border: none; padding: 5px 0; margin: 32px; text-align: left;" data-bs-toggle="dropdown">Blog</a>
+                    <div class="dropdown-menu m-0" style="border-radius: 12px; min-width: 4rem;  background-color: #202d4d;">
+                        <a href="{{ url('/nuestro_equipo') }}" class="dropdown-item"  style="color: #fea116; border-bottom-width: 0em; height: max-content; border: none; margin-top: 0px; text-align: left;">Nuestro Equipo</a>
+                        <a href="{{ url('/testimonios') }}" class="dropdown-item" style="color: #fea116; border-bottom-width: 0em; height: max-content; margin-top: 0px; text-align: left;">Testimonios</a>
                     </div>
                 </div>
-                <a href="{{ url('/contacto') }}" class="nav-item nav-link">Contacto</a>
+                <a href="{{ url('/contacto') }}" class="btn btn-sm btn-outline-light" style="border-bottom-width: 0em; height: max-content; border: none; margin-top: 30px;     text-align: left;">Contacto</a>
             </div>
             <div class="d-flex align-items-center ms-lg-4">
                 @if (Route::has('login'))
                     @auth
-                        <a href="{{ url('/home') }}" class="btn btn-sm btn-outline-light me-2">Dashboard</a>
+                        <a href="{{ url('/home') }}" class="btn btn-sm btn-outline-light me-2" style="border: none;">Dashboard</a>
                         <form method="POST" action="{{ route('logout') }}" class="d-inline">
                             @csrf
-                            <a href="{{ route('logout') }}" class="btn btn-sm btn-outline-light"
+                            <a href="{{ route('logout') }}" class="btn btn-sm btn-outline-light" style="border: none;"
                                 onclick="event.preventDefault(); this.closest('form').submit();">
-                                Logout
+                                <i class="fa-solid fa-right-to-bracket fa-lg" style="color: #fea116;"></i>
                             </a>
                         </form>
                     @else
-                        <a href="{{ route('login') }}" class="btn btn-sm btn-outline-light me-2">Log in</a>
+                        <a href="{{ route('login') }}" class="btn btn-sm btn-outline-light me-2" style="margin-left: 2px;  border: none;"><i class="fa-solid fa-user fa-lg" style="color: #fea116;"></i></a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="btn btn-sm btn-outline-light">Register</a>
+                            <a href="{{ route('register') }}" class="btn btn-sm btn-outline-light" style="border: none; ">Register</a>
                         @endif
                     @endauth
                 @endif
@@ -96,7 +97,7 @@
             <div class="row align-items-center g-5">
                 <div class="col-lg-6 text-center text-lg-start">
                     <h1 class="display-3 text-white animated slideInLeft">Disfruta de Nuestro<br>Deliciosa burger</h1>
-                    <p class="text-white animated slideInLeft mb-4 pb-2">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
+                    <p class="text-white animated slideInLeft mb-4 pb-2">Escoge las mejores hamburguesas artesanales, que preparados con productos de primera calidad.</p>
                     <a href="" class="btn btn-primary py-sm-3 px-sm-5 me-3 animated slideInLeft">Reserva su Pedido</a>
                 </div>
                 <div class="col-lg-6 text-center text-lg-end overflow-hidden">
@@ -179,8 +180,12 @@
                     <div class="col-lg-6">
                         <h5 class="section-title ff-secondary text-start text-primary fw-normal">Sobre nosotros</h5>
                         <h1 class="mb-4">Bienvenido a<i class="fa-solid fa-burger fa-lg" style="color: #fea116;"></i>Hamburguesería</h1>
-                        <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos erat ipsum et lorem et sit, sed stet lorem sit.</p>
-                        <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
+                        <p class="mb-4">En Mr Burger, nos dedicamos a ofrecer hamburguesas artesanales de alta calidad, utilizando ingredientes 
+                            frescos para crear combinaciones únicas y deliciosas. Nuestra misión es proporcionar una experiencia de compra conveniente
+                             y satisfactoria, tanto en línea como en nuestras sucursales físicas.</p>
+                        <p class="mb-4">Nos destacamos por mantener altos estándares de calidad y un excelente servicio al cliente. Aspiramos a ser líderes 
+                            en el mercado de hamburguesas artesanales.
+                        </p>
                         <div class="row g-4 mb-4">
                             <div class="col-sm-6">
                                 <div class="d-flex align-items-center border-start border-5 border-primary px-3">
@@ -201,7 +206,7 @@
                                 </div>
                             </div>
                         </div>
-                        <a class="btn btn-primary py-3 px-5 mt-2" href="">Read More</a>
+                        <a class="btn btn-primary py-3 px-5 mt-2" href="">Leer más</a>
                     </div>
                 </div>
             </div>
@@ -677,7 +682,7 @@
                     <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                         <div class="team-item text-center rounded overflow-hidden">
                             <div class="rounded-circle overflow-hidden m-4">
-                                <img class="img-fluid" src="img/david.jpeg" alt="">
+                                <img class="img-fluid" src="img/david.jpeg" alt="" style="width: 83.4%">
                             </div>
                             <h5 class="mb-0">David Dominguez Ladera</h5>
                             <small>Desarrollador</small>
@@ -717,17 +722,17 @@
                 <div class="row g-5">
                     <div class="col-lg-3 col-md-6">
                         <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Empresa</h4>
-                        <a class="btn btn-link" href="">About Us</a>
-                        <a class="btn btn-link" href="">Contact Us</a>
-                        <a class="btn btn-link" href="">Reservation</a>
-                        <a class="btn btn-link" href="">Privacy Policy</a>
-                        <a class="btn btn-link" href="">Terms & Condition</a>
+                        <a class="btn btn-link" href="">Sobre nosotros</a>
+                        <a class="btn btn-link" href="">Contacta con nosotros</a>
+                        <a class="btn btn-link" href="">Reserva</a>
+                        <a class="btn btn-link" href="">Política de privacidad</a>
+                        <a class="btn btn-link" href="">Términos y Condiciones</a>
                     </div>
                     <div class="col-lg-3 col-md-6">
-                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Contactonos</h4>
-                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
-                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
-                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
+                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Contanos</h4>
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Calle 123, Surco.</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+51 2345 67890</p>
+                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>MisterBur@example.com</p>
                         <div class="d-flex pt-2">
                             <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
                             <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
@@ -737,17 +742,17 @@
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Apertura</h4>
-                        <h5 class="text-light fw-normal">Monday - Saturday</h5>
+                        <h5 class="text-light fw-normal">Lunes- Sabado</h5>
                         <p>09AM - 09PM</p>
-                        <h5 class="text-light fw-normal">Sunday</h5>
+                        <h5 class="text-light fw-normal">Domingo</h5>
                         <p>10AM - 08PM</p>
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Boletin informativo</h4>
-                        <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
+                        <p>Somos una empresa que pertenece al sector alimenticio</p>
                         <div class="position-relative mx-auto" style="max-width: 400px;">
-                            <input class="form-control border-primary w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
-                            <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
+                            <input class="form-control border-primary w-100 py-3 ps-4 pe-5" type="text" placeholder="Correo">
+                            <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">Inscribirse</button>
                         </div>
                     </div>
                 </div>
@@ -756,18 +761,13 @@
                 <div class="copyright">
                     <div class="row">
                         <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                            &copy; <a class="border-bottom" href="#">Your Site Name</a>, All Right Reserved. 
-							
-							<!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-							Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a><br><br>
-                            Distributed By <a class="border-bottom" href="https://themewagon.com" target="_blank">ThemeWagon</a>
+                            &copy; <a class="border-bottom" href="#"> Mister Burger</a>,   Todos los Derechos Reservados.
+                            {{-- <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a><br><br> --}}
                         </div>
                         <div class="col-md-6 text-center text-md-end">
                             <div class="footer-menu">
-                                <a href="">Home</a>
-                                <a href="">Cookies</a>
-                                <a href="">Help</a>
-                                <a href="">FQAs</a>
+                                <a href="">Inicio</a>
+                                <a href="">Ayuda</a>
                             </div>
                         </div>
                     </div>
@@ -778,7 +778,14 @@
 
 
         <!-- Back to Top -->
-        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top" 
+        style="border-radius: 50%;
+               width: 60px; 
+               height: 60px; 
+               display: flex; 
+               justify-content: center; 
+               align-items: center;">
+       <i class="fa-solid fa-arrow-up-short-wide"></i></a>
     </div>
 
     <!-- JavaScript Libraries -->

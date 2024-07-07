@@ -152,7 +152,7 @@
 
 /*** Hero Header ***/
 .hero-header {
-    background: linear-gradient(rgba(15, 23, 43, .9), rgba(15, 23, 43, .9)), url(../img/bg-hero.jpg);
+    background: linear-gradient(rgba(15, 23, 43, .9), rgba(15, 23, 43, .9)), url(../img/hambu-1.jpg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -477,6 +477,8 @@
     padding-right: 0;
     border-right: none;
 }
+
+
 
 @media (min-width: 1400px) {
     .container,.container-sm,.container-md,.container-lg,.container-xl,.container-xxl {

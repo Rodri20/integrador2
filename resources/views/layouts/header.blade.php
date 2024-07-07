@@ -33,14 +33,14 @@
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
+    <script src="https://kit.fontawesome.com/adfd87b550.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <!-- Navbar & Hero Start -->
 <div class="container-xxl position-relative p-0">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0">
         <a href="" class="navbar-brand p-0">
-            <h1 class="text-primary m-0"><i class="fa fa-utensils me-3"></i>Restoran</h1>
+            <h1 class="text-primary m-0"><i class="fa-solid fa-burger"></i>Mister Burger</h1>
             <!-- <img src="img/logo.png" alt="Logo"> -->
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -48,35 +48,36 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto py-0 pe-4">
-                <a href="{{ url('/') }}" class="nav-item nav-link active">Inicio</a>
-                <a href="{{ url('/nosotros') }}" class="nav-item nav-link">Nosotros</a>
-                <a href="{{ url('/servicios') }}" class="nav-item nav-link">Servicios</a>
-                <a href="{{ url('/menu') }}" class="nav-item nav-link">Nuestra Carta</a>
+                <a href="{{ url('/') }}" class="btn btn-sm btn-outline-light" style="border-bottom-width: 0em; height: max-content; border: none; margin-top: 30px; text-align: left;"><i class="fa-solid fa-house fa-lg" style="color: #fea116; "></i></a>
+                <a href="{{ url('/nosotros') }}" class="btn btn-sm btn-outline-light" style="border-bottom-width: 0em; height: max-content; border: none; margin-top: 30px; text-align: left;">Nosotros</a>
+                <a href="{{ url('/servicios') }}" class="btn btn-sm btn-outline-light" style="border-bottom-width: 0em; height: max-content; border: none; margin-top: 30px;  text-align: left;">Servicios</a>
+                <a href="{{ url('/menu') }}" class="btn btn-sm btn-outline-light" style="border-bottom-width: 0em; height: max-content; border: none; margin-top: 30px; text-align: left;">Nuestra Carta</a>
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Blog</a>
-                    <div class="dropdown-menu m-0">
-                        <a href="{{ url('/nuestro_equipo') }}" class="dropdown-item">Nuestro Equipo</a>
-                        <a href="{{ url('/testimonios') }}" class="dropdown-item">Testimonios</a>
+                    <a href="#" class="nav-link dropdown-toggle"
+                    style="border-bottom-width: 0em; height: max-content; border: none; padding: 5px 0; margin: 32px; text-align: left;" data-bs-toggle="dropdown">Blog</a>
+                    <div class="dropdown-menu m-0" style="border-radius: 12px; min-width: 4rem;  background-color: #202d4d;">
+                        <a href="{{ url('/nuestro_equipo') }}" class="dropdown-item"  style="color: #fea116; border-bottom-width: 0em; height: max-content; border: none; margin-top: 0px; text-align: left;">Nuestro Equipo</a>
+                        <a href="{{ url('/testimonios') }}" class="dropdown-item" style="color: #fea116; border-bottom-width: 0em; height: max-content; margin-top: 0px; text-align: left;">Testimonios</a>
                     </div>
                 </div>
-                <a href="{{ url('/contacto') }}" class="nav-item nav-link">Contacto</a>
+                <a href="{{ url('/contacto') }}" class="btn btn-sm btn-outline-light" style="border-bottom-width: 0em; height: max-content; border: none; margin-top: 30px; text-align: left;">Contacto</a>
             </div>
             <div class="d-flex align-items-center ms-lg-4">
                 @if (Route::has('login'))
                     @auth
-                        <a href="{{ url('/home') }}" class="btn btn-sm btn-outline-light me-2">Dashboard</a>
+                        <a href="{{ url('/home') }}"  class="btn btn-sm btn-outline-light me-2" style="border: none;">Dashboard</a>
                         <form method="POST" action="{{ route('logout') }}" class="d-inline">
                             @csrf
-                            <a href="{{ route('logout') }}" class="btn btn-sm btn-outline-light"
+                            <a href="{{ route('logout') }}" class="btn btn-sm btn-outline-light" style="border: none;"
                                 onclick="event.preventDefault(); this.closest('form').submit();">
-                                Logout
+                                <i class="fa-solid fa-right-to-bracket fa-lg" style="color: #fea116;"></i>
                             </a>
                         </form>
                     @else
-                        <a href="{{ route('login') }}" class="btn btn-sm btn-outline-light me-2">Log in</a>
+                        <a href="{{ route('login') }}" class="btn btn-sm btn-outline-light me-2" style="margin-left: 2px;  border: none;"><i class="fa-solid fa-user fa-lg" style="color: #fea116;"></i></a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="btn btn-sm btn-outline-light">Register</a>
+                            <a href="{{ route('register') }}" class="btn btn-sm btn-outline-light" style="border: none;">Register</a>
                         @endif
                     @endauth
                 @endif
