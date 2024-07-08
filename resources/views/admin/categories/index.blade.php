@@ -11,6 +11,7 @@
 
                     <div class="card-body">
                         <a href="{{ route('admin.categories.create') }}" class="btn btn-primary mb-3">Crear Nueva Categoría</a>
+                        <a href="{{ route('admin.dashboard') }}" class="btn btn-secondary mb-3">Volver al Dashboard</a>
 
                         <table class="table">
                             <thead>
