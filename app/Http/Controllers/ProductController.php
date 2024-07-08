@@ -95,4 +95,5 @@ public function showCliente(Product $product)
         $products = Product::all(); // Obtener todos los productos
         return view('pages.menu', compact('products'));
     }
+
 }
