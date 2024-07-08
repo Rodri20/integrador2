@@ -63,7 +63,9 @@ Route::post('/cart/update', [CartController::class, 'update'])->name('cart.updat
 Route::get('/cart/remove/{id}', [CartController::class, 'remove'])->name('cart.remove');
 Route::get('/cart/clear', [CartController::class, 'clear'])->name('cart.clear');
 
-Route::get('/products/{id}', [ProductController::class, 'showCliente'])->name('products.show');
+
+Route::get('/products/{product}', [ProductController::class, 'showCliente'])->name('products.show');
+Route::get('/menu', [ProductController::class, 'menu'])->name('pages.menu');
 
 
 

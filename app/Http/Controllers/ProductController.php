@@ -26,9 +26,9 @@ class ProductController extends Controller
 }
 public function showCliente(Product $product)
 {
-    return view('products.show', compact('product'));
+    $relatedProducts = Product::where('id', '!=', $product->id)->inRandomOrder()->take(4)->get();
+    return view('products.show', compact('product', 'relatedProducts'));
 }
-
 
     public function store(Request $request)
     {
