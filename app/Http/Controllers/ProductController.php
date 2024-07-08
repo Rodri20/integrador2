@@ -24,6 +24,12 @@ class ProductController extends Controller
 {
     return view('admin.products.show', compact('product'));
 }
+public function showCliente(Product $product)
+{
+    return view('products.show', compact('product'));
+}
+
+
     public function store(Request $request)
     {
         $validatedData = $request->validate([

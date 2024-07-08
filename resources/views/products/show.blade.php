@@ -1,29 +1,26 @@
-<!-- show.blade.php -->
-
 @extends('layouts.app')
 
-@section('content')
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-header">{{ $product->name }}</div>
+@section('title', $product->name)
 
-                    <div class="card-body">
-                        <p><strong>Descripción:</strong> {{ $product->description }}</p>
-                        <p><strong>Precio:</strong> {{ $product->price }}</p>
-                        <p><strong>Stock:</strong> {{ $product->stock }}</p>
-                        <p><strong>Imagen:</strong> <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}" width="200"></p>
-                        <p><strong>Categorías:</strong></p>
-                        <ul>
-                            @foreach($product->categories as $category)
-                                <li>{{ $category->name }}</li>
-                            @endforeach
-                        </ul>
-                        <!-- Puedes agregar más detalles del producto aquí según sea necesario -->
-                    </div>
+@section('content')
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-6">
+            <img src="{{ asset('storage/' . $product->image) }}" alt="{{ $product->name }}" class="img-fluid">
+        </div>
+        <div class="col-md-6">
+            <h2>{{ $product->name }}</h2>
+            <p class="text-muted">{{ $product->description }}</p>
+            <p class="text-primary fw-bold">${{ $product->price }}</p>
+            <!-- Aquí puedes agregar más detalles del producto según sea necesario -->
+            <form action="{{ route('cart.add', ['id' => $product->id]) }}" method="POST">
+                @csrf
+                <div class="input-group">
+                    <input type="number" name="quantity" class="form-control" value="1" min="1" required>
+                    <button type="submit" class="btn btn-primary mt-2"><i class="fas fa-cart-plus"></i> Añadir al Carrito</button>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
+</div>
 @endsection

@@ -34,6 +34,7 @@
                                         </div>
                                     </form>
                                 </div>
+                                <a href="{{ route('products.show', $product->id) }}" class="btn btn-link mt-2">Ver más</a>
                             </div>
                         </div>
                     </div>
