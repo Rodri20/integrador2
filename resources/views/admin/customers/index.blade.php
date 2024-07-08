@@ -6,6 +6,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">Gestión de Clientes</div>
+                    <a href="{{ route('admin.dashboard') }}" class="btn btn-secondary mb-3">Volver al Dashboard</a>
 
                     <div class="card-body">
                         @if (session('success'))
