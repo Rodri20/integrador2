@@ -24,6 +24,12 @@ class ProductController extends Controller
 {
     return view('admin.products.show', compact('product'));
 }
+public function showCliente(Product $product)
+{
+    $relatedProducts = Product::where('id', '!=', $product->id)->inRandomOrder()->take(4)->get();
+    return view('products.show', compact('product', 'relatedProducts'));
+}
+
     public function store(Request $request)
     {
         $validatedData = $request->validate([
@@ -89,4 +95,5 @@ class ProductController extends Controller
         $products = Product::all(); // Obtener todos los productos
         return view('pages.menu', compact('products'));
     }
+
 }

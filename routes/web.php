@@ -64,6 +64,10 @@ Route::get('/cart/remove/{id}', [CartController::class, 'remove'])->name('cart.r
 Route::get('/cart/clear', [CartController::class, 'clear'])->name('cart.clear');
 
 
+Route::get('/products/{product}', [ProductController::class, 'showCliente'])->name('products.show');
+Route::get('/menu', [ProductController::class, 'menu'])->name('pages.menu');
+
+
 
 
 
