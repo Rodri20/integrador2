@@ -67,7 +67,19 @@
             <div class="d-flex align-items-center ms-lg-4">
                 @if (Route::has('login'))
                     @auth
-                        <a href="{{ url('/home') }}"  class="btn btn-sm btn-outline-light me-2" style="border: none;">Dashboard</a>
+
+                        <!-- <a href="{{ url('/home') }}"  class="btn btn-sm btn-outline-light me-2" style="border: none;">Dashboard</a> -->
+                        @php
+                            $role = Auth::user()->rol; // Obtén el rol del usuario autenticado
+                        @endphp
+
+                        @if ($role === 'cliente')
+                            <a href="{{ route('cliente.dashboard') }}" class="btn btn-sm btn-outline-light me-2" style="border: none;">Dashboard</a>
+                        @elseif ($role === 'admin')
+                            <a href="{{ route('admin.dashboard') }}" class="btn btn-sm btn-outline-light me-2" style="border: none;">Dashboard</a>
+                        @endif
+
+                        
                         <form method="POST" action="{{ route('logout') }}" class="d-inline">
                             @csrf
                             <a href="{{ route('logout') }}" class="btn btn-sm btn-outline-light" style="border: none;"
