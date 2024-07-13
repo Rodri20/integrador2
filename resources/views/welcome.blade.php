@@ -4,13 +4,13 @@
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1">
 
-            <title>Laravel</title>
+            <title>Mister Burger</title>
 
             <!-- Fonts -->
             <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
                 <!-- Favicon -->
-        <link href="img/favicon.ico" rel="icon">
+                <link href="img/icon-burg2.png" rel="icon">
 
         <!-- Google Web Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -119,7 +119,7 @@
                             <div class="p-4">
                                 <i class="fa fa-3x fa-user-tie text-primary mb-4"></i>
                                 <h5>Maestros de cocina</h5>
-                                <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+                                <p>Los maestros son especialistas en alta cocina y comida saludable.</p>
                             </div>
                         </div>
                     </div>
@@ -129,7 +129,7 @@
                                 <i class="fa-solid fa-burger text-primary mb-4" style="font-size: 50px;"></i>
 
                                 <h5>Comida de calidad</h5>
-                                <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+                                <p>La calidad de nuestra comida es lo que nos caracteriza en comparación con la competencia.</p>
                             </div>
                         </div>
                     </div>
@@ -138,7 +138,7 @@
                             <div class="p-4">
                                 <i class="fa fa-3x fa-cart-plus text-primary mb-4"></i>
                                 <h5>Pedido en línea</h5>
-                                <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+                                <p>Compra ahora y la entrega será de manera inmediata.</p>
                             </div>
                         </div>
                     </div>
@@ -147,7 +147,7 @@
                             <div class="p-4">
                                 <i class="fa fa-3x fa-headset text-primary mb-4"></i>
                                 <h5>Servicio 24/7</h5>
-                                <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+                                <p>Nuestra hora de atención es las 24 horas de los 7 días de la semana.</p>
                             </div>
                         </div>
                     </div>
