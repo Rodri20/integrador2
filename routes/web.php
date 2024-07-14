@@ -9,6 +9,7 @@ use App\Http\Controllers\SalesReportController;
 use App\Http\Controllers\PromotionController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\PaymentController;
 use App\Models\Product;
 
 Route::get('/', function () {
@@ -63,9 +64,16 @@ Route::post('/cart/update', [CartController::class, 'update'])->name('cart.updat
 Route::get('/cart/remove/{id}', [CartController::class, 'remove'])->name('cart.remove');
 Route::get('/cart/clear', [CartController::class, 'clear'])->name('cart.clear');
 
+Route::get('/cart/checkout', [CartController::class, 'checkout'])->name('cart.checkout');
+Route::post('/cart/checkout', [CartController::class, 'processCheckout'])->name('cart.processCheckout');
+
+
 
 Route::get('/products/{product}', [ProductController::class, 'showCliente'])->name('products.show');
 Route::get('/menu', [ProductController::class, 'menu'])->name('pages.menu');
+
+Route::post('/payment/process', [PaymentController::class, 'process'])->name('payment.process');
+
 
 
 

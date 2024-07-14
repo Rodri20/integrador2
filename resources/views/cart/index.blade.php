@@ -64,7 +64,7 @@
 
             <div class="d-flex justify-content-between mt-4">
                 <a href="{{ route('cart.clear') }}" class="btn btn-danger">Vaciar Carrito</a>
-                
+                <a href="{{ route('cart.checkout') }}" class="btn btn-success">Proceder al Pago</a>
                 
             </div>
         @endif

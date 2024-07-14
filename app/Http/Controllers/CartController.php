@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
+use Stripe\Stripe;
+use Stripe\Charge;
 
 class CartController extends Controller
 {
@@ -105,5 +107,48 @@ class CartController extends Controller
     {
         session()->forget('cart');
         return redirect()->route('cart.index')->with('success', 'Carrito vaciado');
+    }
+
+    public function checkout()
+    {
+        $cart = session()->get('cart');
+        if (!$cart) {
+            return redirect()->route('pages.menu')->with('error', 'El carrito está vacío.');
+        }
+
+        $total = collect($cart)->sum(function($item) {
+            return $item['price'] * $item['quantity'];
+        });
+
+        return view('cart.checkout', compact('cart', 'total'));
+    }
+
+    public function processCheckout(Request $request)
+    {
+        $cart = session()->get('cart');
+        if (!$cart) {
+            return redirect()->route('pages.menu')->with('error', 'El carrito está vacío.');
+        }
+
+        $total = collect($cart)->sum(function($item) {
+            return $item['price'] * $item['quantity'];
+        });
+
+        Stripe::setApiKey(env('STRIPE_SECRET'));
+
+        try {
+            $charge = Charge::create([
+                'amount' => $total * 100, // Stripe charges in cents
+                'currency' => 'usd',
+                'source' => $request->stripeToken,
+                'description' => 'Pago de carrito de compras',
+            ]);
+
+            session()->forget('cart');
+
+            return redirect()->route('pages.menu')->with('success', 'Pago realizado con éxito.');
+        } catch (\Exception $e) {
+            return back()->with('error', 'Hubo un error al procesar tu pago. Por favor, intenta de nuevo.');
+        }
     }
 }
