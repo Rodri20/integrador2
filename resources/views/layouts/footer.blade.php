@@ -15,7 +15,7 @@
                 <a class="btn btn-link" href="">Términos y Condiciones</a>
             </div>
             <div class="col-lg-3 col-md-6">
-                <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Contanos</h4>
+                <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Contactanos</h4>
                 <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Calle 123, Surco.</p>
                 <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+51 2345 67890</p>
                 <p class="mb-2"><i class="fa fa-envelope me-3"></i>MisterBur@example.com</p>

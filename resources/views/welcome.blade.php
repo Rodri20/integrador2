@@ -4,13 +4,13 @@
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1">
 
-            <title>Laravel</title>
+            <title>Mister Burger</title>
 
             <!-- Fonts -->
             <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
                 <!-- Favicon -->
-        <link href="img/favicon.ico" rel="icon">
+                <link href="img/icon-burg2.png" rel="icon">
 
         <!-- Google Web Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -44,77 +44,69 @@
             </div>
             <!-- Spinner End -->
             <!-- Navbar & Hero Start -->
-            <div class="container-xxl position-relative p-0">
-                <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0">
-                    <a href="#" class="navbar-brand">
-                        <h1 class="text-primary m-0"><i class="fas fa-hamburger"></i> Mr Burger</h1>
-                    </a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarCollapse">
-                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ url('/') }}"> Inicio</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ url('/nosotros') }}">Nosotros</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ url('/servicios') }}">Servicios</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ url('/menu') }}">Nuestra Carta</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
-                                    Blog
-                                </a>
-                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ url('/nuestro_equipo') }}">Nuestro Equipo</a>
-                                    <a class="dropdown-item" href="{{ url('/testimonios') }}">Testimonios</a>
-                                </div>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="{{ url('/contacto') }}">Contacto</a>
-                            </li>
-                        </ul>
-                        <div class="ms-lg-4">
-                            @if (Route::has('login'))
-                            @auth
-                            <a href="{{ url('/home') }}" class="btn btn-sm btn-outline-light me-2">Dashboard</a>
-                            <form method="POST" action="{{ route('logout') }}" class="d-inline">
-                                @csrf
-                                <button type="submit" class="btn btn-sm btn-outline-light" style="padding: 0;"><i class="fas fa-sign-out-alt fa-lg"></i></button>
-                            </form>
-                            @else
-                            <a href="{{ route('login') }}" class="btn btn-sm btn-outline-light me-2">Login</a>
-                            @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="btn btn-sm btn-outline-light">Registro</a>
-                            @endif
-                            @endauth
-                            @endif
-                        </div>
-                    </div>
-                </nav>
-            
-                <div class="container-xxl py-5 bg-dark hero-header mb-5">
-                    <div class="container">
-                        <div class="row align-items-center g-5">
-                            <div class="col-lg-6 text-center text-lg-start">
-                                <h1 class="display-3 text-white animated slideInLeft">Descubre el Sabor<br>de Nuestras Hamburguesas</h1>
-                                <p class="text-white animated slideInLeft mb-4 pb-2">En Mr Burger, cada hamburguesa es una obra maestra hecha a mano con los ingredientes más frescos y de la mejor calidad. Desde nuestras clásicas hasta nuestras creaciones más audaces, cada bocado es una experiencia inolvidable.</p>
-                                <a href="#" class="btn btn-primary py-sm-3 px-sm-5 me-3 animated slideInLeft">Haz tu Pedido</a>                                
-                            </div>
-                            <div class="col-lg-6 text-center text-lg-end overflow-hidden">
-                                <img class="img-fluid" src="img/hyy.png" alt="Hamburguesa" style="height: 600px; width: 600px;">
-                            </div>
-                        </div>
+<div class="container-xxl position-relative p-0">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0">
+        <a href="" class="navbar-brand p-0">
+            <h1 class="text-primary m-0"><i class="fa-solid fa-burger"></i>Mister Burger</h1>
+            <!-- <img src="img/logo.png" alt="Logo"> -->
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="fa fa-bars"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto py-0 pe-4">
+                <a href="{{ url('/') }}" class="btn btn-sm btn-outline-light" style="border-bottom-width: 0em; height: max-content; border: none; margin-top: 30px;     text-align: left;"><i class="fa-solid fa-house fa-lg" style="color: #fea116; "></i></a>
+                <a href="{{ url('/nosotros') }}" class="btn btn-sm btn-outline-light" style="border-bottom-width: 0em; height: max-content; border: none; margin-top: 30px;     text-align: left;">Nosotros</a>
+                <a href="{{ url('/servicios') }}" class="btn btn-sm btn-outline-light" style="border-bottom-width: 0em; height: max-content; border: none; margin-top: 30px;     text-align: left;">Servicios</a>
+                <a href="{{ url('/menu') }}" class="btn btn-sm btn-outline-light" style="border-bottom-width: 0em; height: max-content; border: none; margin-top: 30px;     text-align: left;">Nuestra Carta</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle"
+                    style="border-bottom-width: 0em; height: max-content; border: none; padding: 5px 0; margin: 29px; text-align: left;" data-bs-toggle="dropdown">Blog</a>
+                    <div class="dropdown-menu m-0" style="border-radius: 12px; min-width: 4rem;  background-color: #202d4d;">
+                        <a href="{{ url('/nuestro_equipo') }}" class="dropdown-item"  style="color: #fea116; border-bottom-width: 0em; height: max-content; border: none; margin-top: 0px; text-align: left;">Nuestro Equipo</a>
+                        <a href="{{ url('/testimonios') }}" class="dropdown-item" style="color: #fea116; border-bottom-width: 0em; height: max-content; margin-top: 0px; text-align: left;">Testimonios</a>
                     </div>
                 </div>
+                <a href="{{ url('/contacto') }}" class="btn btn-sm btn-outline-light" style="border-bottom-width: 0em; height: max-content; border: none; margin-top: 30px;     text-align: left;">Contacto</a>
             </div>
-            
-            
+            <div class="d-flex align-items-center ms-lg-4">
+                @if (Route::has('login'))
+                    @auth
+                        <a href="{{ url('/home') }}" class="btn btn-sm btn-outline-light me-2" style="border: none;">Dashboard</a>
+                        <form method="POST" action="{{ route('logout') }}" class="d-inline">
+                            @csrf
+                            <a href="{{ route('logout') }}" class="btn btn-sm btn-outline-light" style="border: none;"
+                                onclick="event.preventDefault(); this.closest('form').submit();">
+                                <i class="fa-solid fa-right-to-bracket fa-lg" style="color: #fea116;"></i>
+                            </a>
+                        </form>
+                    @else
+                        <a href="{{ route('login') }}" class="btn btn-sm btn-outline-light me-2" style="margin-left: 2px;  border: none;"><i class="fa-solid fa-user fa-lg" style="color: #fea116;"></i></a>
+
+                        {{-- @if (Route::has('register'))
+                            <a href="{{ route('register') }}" class="btn btn-sm btn-outline-light" style="border: none; ">Register</a>
+                        @endif --}}
+                    @endauth
+                @endif
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-xxl py-5 bg-dark hero-header mb-5">
+        <div class="container my-5 py-5">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6 text-center text-lg-start">
+                    <h1 class="display-3 text-white animated slideInLeft">Disfruta de Nuestro<br>Deliciosa burger</h1>
+                    <p class="text-white animated slideInLeft mb-4 pb-2">Escoge las mejores hamburguesas artesanales, que preparados con productos de primera calidad.</p>
+                    <a href="" class="btn btn-primary py-sm-3 px-sm-5 me-3 animated slideInLeft">Reserva su Pedido</a>
+                </div>
+                <div class="col-lg-6 text-center text-lg-end overflow-hidden">
+                    <img class="img-fluid" src="img/hyy.png" alt="" style="height: 600px; width: 600px;">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 <!-- Navbar & Hero End -->
 
             
@@ -127,7 +119,7 @@
                             <div class="p-4">
                                 <i class="fa fa-3x fa-user-tie text-primary mb-4"></i>
                                 <h5>Maestros de cocina</h5>
-                                <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+                                <p>Los maestros son especialistas en alta cocina y comida saludable.</p>
                             </div>
                         </div>
                     </div>
@@ -137,7 +129,7 @@
                                 <i class="fa-solid fa-burger text-primary mb-4" style="font-size: 50px;"></i>
 
                                 <h5>Comida de calidad</h5>
-                                <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+                                <p>La calidad de nuestra comida es lo que nos caracteriza en comparación con la competencia.</p>
                             </div>
                         </div>
                     </div>
@@ -146,7 +138,7 @@
                             <div class="p-4">
                                 <i class="fa fa-3x fa-cart-plus text-primary mb-4"></i>
                                 <h5>Pedido en línea</h5>
-                                <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+                                <p>Compra ahora y la entrega será de manera inmediata.</p>
                             </div>
                         </div>
                     </div>
@@ -155,7 +147,7 @@
                             <div class="p-4">
                                 <i class="fa fa-3x fa-headset text-primary mb-4"></i>
                                 <h5>Servicio 24/7</h5>
-                                <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+                                <p>Nuestra hora de atención es las 24 horas de los 7 días de la semana.</p>
                             </div>
                         </div>
                     </div>
@@ -197,7 +189,7 @@
                         <div class="row g-4 mb-4">
                             <div class="col-sm-6">
                                 <div class="d-flex align-items-center border-start border-5 border-primary px-3">
-                                    <h1 class="flex-shrink-0 display-5 text-primary mb-0" data-toggle="counter-up">+10</h1>
+                                    <h1 class="flex-shrink-0 display-5 text-primary mb-0" data-toggle="counter-up">10</h1>
                                     <div class="ps-4">
                                         <p class="mb-0">Años de </p>
                                         <h6 class="text-uppercase mb-0">EXPERIENCIA</h6>
@@ -206,10 +198,10 @@
                             </div>
                             <div class="col-sm-6">
                                 <div class="d-flex align-items-center border-start border-5 border-primary px-3">
-                                    <h1 class="flex-shrink-0 display-5 text-primary mb-0" data-toggle="counter-up">+5</h1>
+                                    <h1 class="flex-shrink-0 display-5 text-primary mb-0" data-toggle="counter-up">5</h1>
                                     <div class="ps-4">
-                                        <p class="mb-0">Expertos</p>
-                                        <h6 class="text-uppercase mb-0">COCINEROS</h6>
+                                        <p class="mb-0">Popular</p>
+                                        <h6 class="text-uppercase mb-0">MAESTROS COCINEROS</h6>
                                     </div>
                                 </div>
                             </div>

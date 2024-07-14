@@ -5,13 +5,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>@yield('title', 'Laravel')</title>
+    <title>@yield('title', 'Mister Burger')</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+    <link href="img/icon-burg2.png" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -31,6 +31,8 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
+    
+
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://kit.fontawesome.com/adfd87b550.js" crossorigin="anonymous"></script>
@@ -54,7 +56,7 @@
                 <a href="{{ url('/menu') }}" class="btn btn-sm btn-outline-light" style="border-bottom-width: 0em; height: max-content; border: none; margin-top: 30px; text-align: left;">Nuestra Carta</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle"
-                    style="border-bottom-width: 0em; height: max-content; border: none; padding: 5px 0; margin: 32px; text-align: left;" data-bs-toggle="dropdown">Blog</a>
+                    style="border-bottom-width: 0em; height: max-content; border: none; padding: 5px 0; margin: 29px; text-align: left;" data-bs-toggle="dropdown">Blog</a>
                     <div class="dropdown-menu m-0" style="border-radius: 12px; min-width: 4rem;  background-color: #202d4d;">
                         <a href="{{ url('/nuestro_equipo') }}" class="dropdown-item"  style="color: #fea116; border-bottom-width: 0em; height: max-content; border: none; margin-top: 0px; text-align: left;">Nuestro Equipo</a>
                         <a href="{{ url('/testimonios') }}" class="dropdown-item" style="color: #fea116; border-bottom-width: 0em; height: max-content; margin-top: 0px; text-align: left;">Testimonios</a>
@@ -65,7 +67,19 @@
             <div class="d-flex align-items-center ms-lg-4">
                 @if (Route::has('login'))
                     @auth
-                        <a href="{{ url('/home') }}"  class="btn btn-sm btn-outline-light me-2" style="border: none;">Dashboard</a>
+
+                        <!-- <a href="{{ url('/home') }}"  class="btn btn-sm btn-outline-light me-2" style="border: none;">Dashboard</a> -->
+                        @php
+                            $role = Auth::user()->rol; // Obtén el rol del usuario autenticado
+                        @endphp
+
+                        @if ($role === 'cliente')
+                            <a href="{{ route('cliente.dashboard') }}" class="btn btn-sm btn-outline-light me-2" style="border: none;">Dashboard</a>
+                        @elseif ($role === 'admin')
+                            <a href="{{ route('admin.dashboard') }}" class="btn btn-sm btn-outline-light me-2" style="border: none;">Dashboard</a>
+                        @endif
+
+                        
                         <form method="POST" action="{{ route('logout') }}" class="d-inline">
                             @csrf
                             <a href="{{ route('logout') }}" class="btn btn-sm btn-outline-light" style="border: none;"
@@ -76,9 +90,9 @@
                     @else
                         <a href="{{ route('login') }}" class="btn btn-sm btn-outline-light me-2" style="margin-left: 2px;  border: none;"><i class="fa-solid fa-user fa-lg" style="color: #fea116;"></i></a>
 
-                        @if (Route::has('register'))
+                        {{-- @if (Route::has('register'))
                             <a href="{{ route('register') }}" class="btn btn-sm btn-outline-light" style="border: none;">Register</a>
-                        @endif
+                        @endif --}}
                     @endauth
                 @endif
             </div>
