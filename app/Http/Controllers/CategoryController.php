@@ -50,4 +50,10 @@ class CategoryController extends Controller
         $category->delete();
         return redirect()->route('admin.categories.index')->with('success', 'Categoría eliminada con éxito');
     }
+
+    public function tablaCategory()
+    {
+        $categories = Category::all();
+        return view('welcome', compact('categories'));
+    }
 }

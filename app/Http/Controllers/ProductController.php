@@ -21,14 +21,14 @@ class ProductController extends Controller
     }
     
     public function show(Product $product)
-{
-    return view('admin.products.show', compact('product'));
-}
-public function showCliente(Product $product)
-{
-    $relatedProducts = Product::where('id', '!=', $product->id)->inRandomOrder()->take(4)->get();
-    return view('products.show', compact('product', 'relatedProducts'));
-}
+    {
+        return view('admin.products.show', compact('product'));
+    }
+    public function showCliente(Product $product)
+    {
+        $relatedProducts = Product::where('id', '!=', $product->id)->inRandomOrder()->take(4)->get();
+        return view('products.show', compact('product', 'relatedProducts'));
+    }
 
     public function store(Request $request)
     {
@@ -95,5 +95,12 @@ public function showCliente(Product $product)
         $products = Product::all(); // Obtener todos los productos
         return view('pages.menu', compact('products'));
     }
+
+    public function tablaInicio()
+    {
+        $products = Product::all(); // Obtener todos los productos
+        return view('welcome', compact('products'));
+    }
+    
 
 }
