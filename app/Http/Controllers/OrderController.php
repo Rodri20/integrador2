@@ -35,4 +35,9 @@ class OrderController extends Controller
         $order->delete();
         return redirect()->route('admin.orders.index')->with('success', 'Pedido eliminado con éxito');
     }
+
+    public function confirmation(Order $order)
+    {
+        return view('orders.confirmation', compact('order'));
+    }
 }

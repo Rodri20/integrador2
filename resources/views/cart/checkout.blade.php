@@ -117,7 +117,7 @@
 <script src="https://js.stripe.com/v3/"></script>
 <script>
     // Crea una instancia de Stripe con tu clave pública
-    var stripe = Stripe('{{ env('STRIPE_KEY') }}');
+    var stripe = Stripe('{{ env('STRIPE_KEY') }}'); // Asegúrate de que env('STRIPE_KEY') tenga la clave pública correcta
     var elements = stripe.elements();
 
     // Define el estilo del campo de tarjeta
@@ -177,6 +177,7 @@
         form.submit();
     }
 </script>
+
 @endsection
 
 @push('styles')
