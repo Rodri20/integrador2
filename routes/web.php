@@ -12,9 +12,13 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\PaymentController;
 use App\Models\Product;
 
+// Página de bienvenida
 Route::get('/', function () {
-    return view('welcome');
-});
+    $products = App\Models\Product::all();
+    $categories = App\Models\Category::all();
+    return view('welcome', compact('products', 'categories'));
+})->name('home');
+
 
 // Rutas de autenticación
 Auth::routes();
