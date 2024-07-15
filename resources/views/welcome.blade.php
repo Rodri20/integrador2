@@ -365,7 +365,7 @@
                     <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
                         <div class="team-item text-center rounded overflow-hidden">
                             <div class="rounded-circle overflow-hidden m-4">
-                                <img class="img-fluid" src="{{ asset('img/team-1.jpg') }}" alt="Imagen del equipo">
+                                <img class="img-fluid" src="{{ asset('img/Sergio.png') }}" alt="Imagen del equipo" style="width: 83.4%">
                             </div>
                             <h5 class="mb-0">Sergio Luis Alvarez Miranda</h5>
                             <small>Desarrollador</small>
