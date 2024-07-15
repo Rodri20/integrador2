@@ -59,7 +59,7 @@ class PaymentController extends Controller
 
             // Cobrar el pago
             Charge::create([
-                'amount' => $total * 100, // Monto en centavos
+                'amount' => $total * 1, // Monto en dolares
                 'currency' => 'usd',
                 'description' => 'Compra en MR. BURGUER',
                 'source' => $request->stripeToken,
