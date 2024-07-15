@@ -4,7 +4,7 @@
             <meta charset="utf-8">
             <meta name="viewport" content="width=device-width, initial-scale=1">
 
-            <title>Mister Burger</title>
+            <title>Mr Burger</title>
 
             <!-- Fonts -->
             <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -47,7 +47,7 @@
 <div class="container-xxl position-relative p-0">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0">
         <a href="" class="navbar-brand p-0">
-            <h1 class="text-primary m-0"><i class="fa-solid fa-burger"></i>Mister Burger</h1>
+            <h1 class="text-primary m-0"><i class="fa-solid fa-burger"></i>Mr Burger</h1>
             <!-- <img src="img/logo.png" alt="Logo"> -->
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -696,7 +696,7 @@
                     <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
                         <div class="team-item text-center rounded overflow-hidden">
                             <div class="rounded-circle overflow-hidden m-4">
-                                <img class="img-fluid" src="img/team-4.jpg" alt="">
+                                <img class="img-fluid" src="img/Hiad.png" alt="" style="width: 83.4%">
                             </div>
                             <h5 class="mb-0">Hiad Javier Palomino Vivanco</h5>
                             <small>Desarrollador</small>
@@ -729,7 +729,7 @@
                         <a class="btn btn-link" href="">Términos y Condiciones</a>
                     </div>
                     <div class="col-lg-3 col-md-6">
-                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Contanos</h4>
+                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Contactanos</h4>
                         <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Calle 123, Surco.</p>
                         <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+51 2345 67890</p>
                         <p class="mb-2"><i class="fa fa-envelope me-3"></i>MisterBur@example.com</p>
