@@ -139,6 +139,7 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
 
 // Rutas para clientes
 Route::middleware(['auth', 'cliente'])->prefix('cliente')->group(function () {
-    Route::get('/dashboard', [App\Http\Controllers\ClienteController::class, 'dashboard'])->name('cliente.dashboard');
-    // Otras rutas de cliente...
+    Route::get('/dashboard', [App\Http\Controllers\OrderController::class, 'dashboard'])->name('cliente.dashboard');
+    Route::get('/search', [App\Http\Controllers\OrderController::class, 'search'])->name('cliente.search');
+    Route::get('/order/{id}', [App\Http\Controllers\OrderController::class, 'detalleCli'])->name('cliente.detalleCli');
 });

@@ -13,6 +13,7 @@ class Order extends Model
         'status',
         'user_id',
         'total',
+        'tracking_code',
     ];
 
     public function user()
@@ -23,5 +24,10 @@ class Order extends Model
     public function products()
     {
         return $this->belongsToMany(Product::class)->withPivot('quantity', 'price');
+    }
+
+    public function orderItems()
+    {
+        return $this->hasMany(OrderItem::class);
     }
 }
