@@ -50,10 +50,14 @@ Route::get('/reservas', function() {
     return view('pages.booking');
 })->name('reservas');
 
-// Menú
+Route::get('/menu', function() {
+    return view('pages.menu');
+})->name('menu');
+
 Route::get('/menu', [ProductController::class, 'menu'])->name('menu');
 
-// Rutas para el carrito
+
+
 Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
 Route::post('/cart/add/{id}', [CartController::class, 'add'])->name('cart.add');
 Route::post('/cart/update', [CartController::class, 'update'])->name('cart.update');
@@ -69,6 +73,14 @@ Route::get('/products/{product}', [ProductController::class, 'showCliente'])->na
 Route::get('/menu', [ProductController::class, 'menu'])->name('pages.menu');
 
 Route::post('/payment/process', [PaymentController::class, 'process'])->name('payment.process');
+
+
+Route::post('/payment', [PaymentController::class, 'process'])->name('payment.process');
+Route::get('/order/confirmation/{order}', [OrderController::class, 'confirmation'])->name('order.confirmation');
+
+Route::get('order/{order}', [OrderController::class, 'show'])->name('order.show');
+Route::get('order/{order}', [OrderController::class, 'show'])->name('order.show');
+
 
 // Rutas para administradores
 Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
@@ -123,7 +135,6 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
         ]);
 
 });
-
 
 
 // Rutas para clientes
