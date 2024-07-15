@@ -88,14 +88,6 @@ a:hover {
     color: cadetblue;
 }
 
-.imagen-formulario {
-    background-image: url('/img/about-4.jpg');
-    background-size: cover;
-    background-position: center;
-    height: 95%;
-    margin: 15px;
-    border-radius: 5px;
-}
 
 @media (min-width: 768px) {
     .formulario {
@@ -104,4 +96,40 @@ a:hover {
         border-radius: 8%;
         max-width: 540px;
     }
+
+
+
+.imagen-formulario {
+    border-top-left-radius: .25rem;
+    border-bottom-left-radius: .25rem;
+}
+
+.input-contenedor input {
+    border-radius: 25px;
+    padding: 10px 20px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 20px;
+}
+
+.btn-link {
+    color: #007bff;
+}
+
+.formulario {
+    padding: 20px;
+}
+
+.card-header {
+    background-color: #f8f9fa;
+    border-bottom: none;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+
 }

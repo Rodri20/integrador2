@@ -5,14 +5,14 @@
 <head>
     <link href="{{ asset('css/estilos.css') }}" rel="stylesheet">
 </head>
-<div class="container">
+<div class="container mt-5">
     <div class="row justify-content-center">
-        <div class="col-md-8" style="width: 56%;">
+        <div class="col-md-8">
             <div class="card">
                 <div class="row g-0">
                     <!-- Columna de la imagen -->
                     <div class="col-md-4 d-none d-md-block">
-                        <div class="imagen-formulario"></div>
+                        <div class="imagen-formulario" style="background-image: url('{{ asset('img/about-4.jpg') }}'); background-size: cover; background-position: center; height: 100%;"></div>
                     </div>
 
                     <!-- Columna del formulario -->
@@ -29,7 +29,7 @@
                                         </label>
 
                                         <div class="col-md-6">
-                                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Correo Electronico">
+                                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="Correo Electrónico">
                                             
                                             @error('email')
                                                 <span class="invalid-feedback" role="alert">
@@ -81,8 +81,8 @@
                                         </div>
                                     </div>
 
-                                    <p>Al registrarte, aceptas nuestras Condiciones de uso y Política de privacidad.</p>
-                                    <p>¿No tienes una cuenta? <a class="link" href="{{ route('register') }}">Registrate</a></p>
+                                    <p class="text-center mt-3">Al registrarte, aceptas nuestras Condiciones de uso y Política de privacidad.</p>
+                                    <p class="text-center">¿No tienes una cuenta? <a class="link" href="{{ route('register') }}">Regístrate</a></p>
                                 </div>
                             </form>
                         </div>

@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>@yield('title', 'Mister Burger')</title>
+    <title>@yield('title', 'Mr Burger')</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -42,7 +42,7 @@
 <div class="container-xxl position-relative p-0">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0">
         <a href="" class="navbar-brand p-0">
-            <h1 class="text-primary m-0"><i class="fa-solid fa-burger"></i>Mister Burger</h1>
+            <h1 class="text-primary m-0"><i class="fa-solid fa-burger"></i>Mr Burger</h1>
             <!-- <img src="img/logo.png" alt="Logo"> -->
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -55,7 +55,7 @@
                 <a href="{{ url('/servicios') }}" class="btn btn-sm btn-outline-light" style="border-bottom-width: 0em; height: max-content; border: none; margin-top: 30px;  text-align: left;">Servicios</a>
                 <a href="{{ url('/menu') }}" class="btn btn-sm btn-outline-light" style="border-bottom-width: 0em; height: max-content; border: none; margin-top: 30px; text-align: left;">Nuestra Carta</a>
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle"
+                    <a href="#" class="btn btn-sm btn-outline-light dropdown-toggle"
                     style="border-bottom-width: 0em; height: max-content; border: none; padding: 5px 0; margin: 29px; text-align: left;" data-bs-toggle="dropdown">Blog</a>
                     <div class="dropdown-menu m-0" style="border-radius: 12px; min-width: 4rem;  background-color: #202d4d;">
                         <a href="{{ url('/nuestro_equipo') }}" class="dropdown-item"  style="color: #fea116; border-bottom-width: 0em; height: max-content; border: none; margin-top: 0px; text-align: left;">Nuestro Equipo</a>
