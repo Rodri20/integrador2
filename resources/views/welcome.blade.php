@@ -47,7 +47,7 @@
 <div class="container-xxl position-relative p-0">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0">
         <a href="" class="navbar-brand p-0">
-            <h1 class="text-primary m-0"><i class="fa-solid fa-burger"></i>Mister Burger</h1>
+            <h1 class="text-primary m-0"><i class="fa-solid fa-burger"></i>Mr Burger</h1>
             <!-- <img src="img/logo.png" alt="Logo"> -->
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -285,7 +285,7 @@
                 </div>
                 <div class="col-md-6 bg-dark d-flex align-items-center">
                     <div class="p-5 wow fadeInUp" data-wow-delay="0.2s">
-                        <h5 class="section-title ff-secondary text-start text-primary fw-normal">Reservation</h5>
+                        <h5 class="section-title ff-secondary text-start text-primary fw-normal">Reservación</h5>
                         <h1 class="text-white mb-4">Reserve en línea</h1>
                         <form>
                             <div class="row g-3">
@@ -406,7 +406,7 @@
                     <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
                         <div class="team-item text-center rounded overflow-hidden">
                             <div class="rounded-circle overflow-hidden m-4">
-                                <img class="img-fluid" src="img/team-4.jpg" alt="">
+                                <img class="img-fluid" src="img/Hiad.png" alt="" style="width: 83.4%">
                             </div>
                             <h5 class="mb-0">Hiad Javier Palomino Vivanco</h5>
                             <small>Desarrollador</small>
@@ -439,7 +439,7 @@
                         <a class="btn btn-link" href="">Términos y Condiciones</a>
                     </div>
                     <div class="col-lg-3 col-md-6">
-                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Contanos</h4>
+                        <h4 class="section-title ff-secondary text-start text-primary fw-normal mb-4">Contactanos</h4>
                         <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Calle 123, Surco.</p>
                         <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+51 2345 67890</p>
                         <p class="mb-2"><i class="fa fa-envelope me-3"></i>MisterBur@example.com</p>
@@ -471,7 +471,7 @@
                 <div class="copyright">
                     <div class="row">
                         <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                            &copy; <a class="border-bottom" href="#"> Mister Burger</a>,   Todos los Derechos Reservados.
+                            &copy; <a class="border-bottom" href="#"> Mr Burger</a>,   Todos los Derechos Reservados.
                             {{-- <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a><br><br> --}}
                         </div>
                         <div class="col-md-6 text-center text-md-end">
