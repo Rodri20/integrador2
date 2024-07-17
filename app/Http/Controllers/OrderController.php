@@ -40,4 +40,39 @@ class OrderController extends Controller
     {
         return view('orders.confirmation', compact('order'));
     }
+
+    public function dashboard()
+    {
+        $orders = Order::where('user_id', auth()->id())->get(); // Asegúrate de que esto devuelve una colección.
+        return view('cliente.dashboard', ['orders' => $orders]);
+    }
+
+    // Método para buscar un pedido por código
+    public function search(Request $request)
+    {
+        $request->validate([
+            'order_code' => 'required|string',
+        ]);
+
+        $order = auth()->user()->orders()->where('tracking_code', $request->order_code)->first();
+
+        if ($order) {
+            return view('cliente.order_detail', compact('order'));
+        } else {
+            return redirect()->route('cliente.dashboard')->with('error', 'Pedido no encontrado');
+        }
+    }
+
+    public function detalleCli($id)
+    {
+        // Cargar la orden junto con los OrderItems y los productos relacionados
+        $order = Order::with('orderItems.product')->find($id);
+    
+        if (!$order) {
+            return redirect()->route('cliente.dashboard')->with('error', 'Pedido no encontrado.');
+        }
+    
+        return view('cliente.order_detail', compact('order'));
+    }
+    
 }

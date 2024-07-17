@@ -47,7 +47,7 @@
         <div class="copyright">
             <div class="row">
                 <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                    &copy; <a class="border-bottom" href="#"> Mister Burger</a>,   Todos los Derechos Reservados.
+                    &copy; <a class="border-bottom" href="#"> Mr Burger</a>,   Todos los Derechos Reservados.
                     {{-- <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a><br><br> --}}
                 </div>
                 <div class="col-md-6 text-center text-md-end">

@@ -14,7 +14,11 @@ class Order extends Model
         'status',
         'user_id',
         'total',
+<<<<<<< HEAD
         'created_at',    // Asegúrate de agregar esto si lo usas
+=======
+        'tracking_code',
+>>>>>>> 88f1c62b379241788f4a652cc6f5f212482e09e5
     ];
 
     // Definir los campos de fecha
@@ -32,5 +36,10 @@ class Order extends Model
     public function products()
     {
         return $this->belongsToMany(Product::class)->withPivot('quantity', 'price');
+    }
+
+    public function orderItems()
+    {
+        return $this->hasMany(OrderItem::class);
     }
 }
