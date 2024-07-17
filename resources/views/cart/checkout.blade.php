@@ -94,6 +94,11 @@
                         <label for="country">País</label>
                         <input type="text" id="country" name="country" class="form-control" required>
                     </div>
+                    <!-- Campo de selección de fecha -->
+                    <div class="form-group mb-3">
+                        <label for="date">Fecha de Entrega</label>
+                        <input type="text" id="date" name="delivery_date" class="form-control flatpickr-input" required>
+                    </div>
                 </div>
 
                 <!-- Información de la tarjeta -->
@@ -113,8 +118,12 @@
     </div>
 </div>
 
-<!-- Incluye el script de Stripe -->
+<!-- Incluye el CSS de Flatpickr -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+<!-- Incluye el script de Stripe y Flatpickr -->
 <script src="https://js.stripe.com/v3/"></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 <script>
     // Crea una instancia de Stripe con tu clave pública
     var stripe = Stripe('{{ env('STRIPE_KEY') }}'); // Asegúrate de que env('STRIPE_KEY') tenga la clave pública correcta
@@ -176,23 +185,46 @@
         form.appendChild(hiddenInput);
         form.submit();
     }
+
+    // Inicializa Flatpickr
+    flatpickr("#date", {
+        enableTime: true,
+        dateFormat: "Y-m-d H:i:S" // Asegúrate de que este formato coincida con el esperado en el controlador
+    });
 </script>
 
 @endsection
 
 @push('styles')
 <style>
-    /* Estilos para el contenedor del campo de tarjeta */
-    #card-element {
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    /* Estilos personalizados para el calendario de Flatpickr */
+    .flatpickr-calendar {
+        background: #ffffff; /* Fondo del calendario */
+        border: 1px solid #dee2e6; /* Borde del calendario */
+        border-radius: 4px; /* Bordes redondeados */
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* Sombra del calendario */
     }
-    /* Estilos para los errores de formulario */
-    #card-errors {
-        color: #fa755a;
-        margin-top: 10px;
+
+    .flatpickr-month {
+        background: #ff9100; /* Fondo del encabezado del calendario */
+        color: #ffffff; /* Color del texto en el encabezado del calendario */
+    }
+
+    .flatpickr-day.selected, .flatpickr-day.today {
+        background: #ff9100; /* Fondo del día seleccionado y hoy */
+        color: #ffffff; /* Color del texto del día seleccionado y hoy */
+    }
+
+    .flatpickr-day:hover {
+        background: #e9ecef; /* Fondo del día al pasar el ratón sobre él */
+    }
+
+    .flatpickr-day.disabled {
+        color: #6c757d; /* Color del texto para días deshabilitados */
+    }
+
+    .flatpickr-calendar .flatpickr-day.inRange {
+        background: #e9ecef; /* Fondo para los días en el rango seleccionado */
     }
 </style>
 @endpush

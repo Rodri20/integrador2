@@ -84,6 +84,43 @@
                 <div class="card-body">
                     <div class="chart-area">
                         <canvas id="salesChart"></canvas>
+                        <script>
+                            // Configuración del gráfico de ventas
+                            var salesCtx = document.getElementById('salesChart').getContext('2d');
+                            var salesChart = new Chart(salesCtx, {
+                                type: 'line',
+                                data: {
+                                    labels: @json($salesLabels),
+                                    datasets: [{
+                                        label: 'Ventas',
+                                        data: @json($salesValues),
+                                        borderColor: [
+                                            'rgb(255,99,132)',
+                                            'rgb(255, 0, 0)',
+                                            'rgb(255,159,64)',
+                                            'rgb(255,205,86)',
+                                            'rgb(75,192,192)',
+                                        ],
+                                        backgroundColor: [
+                                            'rgb(255,99,132,1)',
+                                            'rgb(255, 0, 0,1)',
+                                            'rgb(255, 128, 0,1)',
+                                            'rgb(255,159,64,1)',
+                                            'rgb(255,205,86,1)',
+                                            'rgb(75,192,192,1)',
+                                        ],
+                                        borderWidth: 1
+                                    }]
+                                },
+                                options: {
+                                    scales: {
+                                        y: {
+                                            beginAtZero: true
+                                        }
+                                    }
+                                }
+                            });
+                        </script>
                     </div>
                 </div>
             </div>
@@ -97,6 +134,43 @@
                 <div class="card-body">
                     <div class="chart-area">
                         <canvas id="ordersChart"></canvas>
+                        <script>
+                            // Configuración del gráfico de pedidos
+                            var ordersCtx = document.getElementById('ordersChart').getContext('2d');
+                            var ordersChart = new Chart(ordersCtx, {
+                                type: 'bar',
+                                data: {
+                                    labels: @json($ordersLabels),
+                                    datasets: [{
+                                        label: 'Pedidos',
+                                        data: @json($ordersValues),
+                                        borderColor: [
+                                            'rgb(255,99,132)',
+                                            'rgb(255, 0, 0)',
+                                            'rgb(255,159,64)',
+                                            'rgb(255,205,86)',
+                                            'rgb(75,192,192)',
+                                        ],
+                                        backgroundColor: [
+                                            'rgb(255,99,132,1)',
+                                            'rgb(255, 0, 0,1)',
+                                            'rgb(255, 128, 0,1)',
+                                            'rgb(255,159,64,1)',
+                                            'rgb(255,205,86,1)',
+                                            'rgb(75,192,192,1)',
+                                        ],
+                                        borderWidth: 1
+                                    }]
+                                },
+                                options: {
+                                    scales: {
+                                        y: {
+                                            beginAtZero: true
+                                        }
+                                    }
+                                }
+                            });
+                        </script>
                     </div>
                 </div>
             </div>
@@ -129,53 +203,4 @@
 
 @section('scripts')
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Configuración del gráfico de ventas
-    var salesCtx = document.getElementById('salesChart').getContext('2d');
-    var salesChart = new Chart(salesCtx, {
-        type: 'line',
-        data: {
-            labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
-            datasets: [{
-                label: 'Ventas',
-                data: {!! json_encode(array_values($salesData)) !!},
-                borderColor: 'rgba(75, 192, 192, 1)',
-                backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
-
-    // Configuración del gráfico de pedidos
-    var ordersCtx = document.getElementById('ordersChart').getContext('2d');
-    var ordersChart = new Chart(ordersCtx, {
-        type: 'bar',
-        data: {
-            labels: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
-            datasets: [{
-                label: 'Pedidos',
-                data: {!! json_encode(array_values($ordersData)) !!},
-                backgroundColor: 'rgba(54, 162, 235, 0.5)',
-                borderColor: 'rgba(54, 162, 235, 1)',
-                borderWidth: 1
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: true
-                }
-            }
-        }
-    });
-});
-</script>
 @endsection

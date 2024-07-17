@@ -23,6 +23,7 @@
                                     <th>Estado</th>
                                     <th>Código de Seguimiento</th>
                                     <th>Acciones</th>
+                                    <th>Fecha pedido</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -33,6 +34,7 @@
                                         <td>{{ $order->total }}</td>
                                         <td>{{ $order->status }}</td>
                                         <td>{{ $order->tracking_code }}</td>
+                                        <td>{{ $order->created_at }}</td>
                                         <td>
                                             <a href="{{ route('admin.orders.show', $order) }}" class="btn btn-info btn-sm">Ver</a>
                                             <form action="{{ route('admin.orders.destroy', $order) }}" method="POST" style="display:inline;">
