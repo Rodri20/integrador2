@@ -1,64 +1,49 @@
 @extends('layouts.app')
 
-@section('title', 'Dashboard del Cliente')
+@section('title', 'Dashboard de Cliente')
 
 @section('content')
 <div class="container">
-    <h1 class="my-4">Dashboard del Cliente</h1>
+    <h1 class="my-4">Mis Órdenes</h1>
 
-    <!-- Mensajes de éxito o error -->
-    @if(session()->has('success'))
-        <div class="alert alert-success alert-dismissible fade show" role="alert">
-            {{ session()->get('success') }}
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-    @endif
-    @if(session()->has('error'))
-        <div class="alert alert-danger alert-dismissible fade show" role="alert">
-            {{ session()->get('error') }}
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-        </div>
-    @endif
+    <div class="mb-4">
+        <form action="{{ route('cliente.dashboard') }}" method="GET" class="form-inline">
+            <input type="text" name="order_code" class="form-control mr-sm-2" placeholder="Código de Pedido">
+            <button type="submit" class="btn btn-primary">Buscar</button>
+        </form>
+    </div>
 
-    <!-- Formulario de búsqueda de pedidos -->
-    <form action="{{ route('cliente.search') }}" method="GET" class="mb-4">
-        @csrf
-        <div class="form-group">
-            <label for="order_code">Buscar por código de pedido:</label>
-            <input type="text" id="order_code" name="order_code" class="form-control" required>
+    @if($orders->isEmpty())
+        <div class="alert alert-info">
+            <p>No has realizado ninguna orden aún.</p>
         </div>
-        <button type="submit" class="btn btn-primary mt-2">Buscar</button>
-    </form>
-
-    <!-- Lista de pedidos del cliente -->
-    <h3>Mis Pedidos</h3>
-    @if($orders->count() > 0)
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Código de Seguimiento</th>
-                    <th>Total</th>
-                    <th>Estado</th>
-                    <th>Detalles</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach($orders as $order)
-                    <tr>
-                        <td>{{ $order->id }}</td>
-                        <td>{{ $order->tracking_code }}</td>
-                        <td>${{ $order->total }}</td>
-                        <td>{{ $order->status }}</td>
-                        <td>
-                            <a href="{{ route('cliente.detalleCli', $order->id) }}" class="btn btn-info">Ver Detalles</a>
-                        </td>
-                    </tr>
-                @endforeach
-            </tbody>
-        </table>
     @else
-        <p>No tienes pedidos registrados.</p>
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <th>ID de Pedido</th>
+                        <th>Estado</th>
+                        <th>Total</th>
+                        <th>Fecha</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($orders as $order)
+                        <tr>
+                            <td>{{ $order->id }}</td>
+                            <td>{{ $order->status }}</td>
+                            <td>${{ $order->total }}</td>
+                            <td>{{ $order->created_at->format('d/m/Y') }}</td>
+                            <td>
+                                <a href="{{ route('cliente.detalleCli', $order->id) }}" class="btn btn-sm btn-primary">Ver Detalles</a>
+                            </td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
+        </div>
     @endif
 </div>
 @endsection

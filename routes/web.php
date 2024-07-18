@@ -10,6 +10,7 @@ use App\Http\Controllers\PromotionController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\ClienteController;
 use App\Models\Product;
 
 // Página de bienvenida
@@ -143,7 +144,7 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
 
 // Rutas para clientes
 Route::middleware(['auth', 'cliente'])->prefix('cliente')->group(function () {
-    Route::get('/dashboard', [App\Http\Controllers\OrderController::class, 'dashboard'])->name('cliente.dashboard');
+    Route::get('/dashboard', [ClienteController::class, 'dashboard'])->name('cliente.dashboard');
     Route::get('/search', [App\Http\Controllers\OrderController::class, 'search'])->name('cliente.search');
-    Route::get('/order/{id}', [App\Http\Controllers\OrderController::class, 'detalleCli'])->name('cliente.detalleCli');
+    Route::get('/order/{id}', [OrderController::class, 'detalleCli'])->name('cliente.detalleCli');
 });

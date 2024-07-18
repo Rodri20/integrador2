@@ -15,13 +15,9 @@ class ClienteController extends Controller
      */
     public function dashboard()
     {
-        // Obtener el usuario autenticado
         $user = Auth::user();
+        $orders = $user->orders;
 
-        // Obtener los pedidos del usuario autenticado
-        $orders = Order::where('user_id', $user->id)->get();
-
-        // Pasar los pedidos a la vista
         return view('cliente.dashboard', compact('orders'));
     }
 }

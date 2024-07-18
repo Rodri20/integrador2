@@ -65,14 +65,18 @@ class OrderController extends Controller
 
     public function detalleCli($id)
     {
-        // Cargar la orden junto con los OrderItems y los productos relacionados
-        $order = Order::with('orderItems.product')->find($id);
+        $order = Order::with(['orderItems.product'])->find($id);
     
         if (!$order) {
             return redirect()->route('cliente.dashboard')->with('error', 'Pedido no encontrado.');
         }
     
+
+    
         return view('cliente.order_detail', compact('order'));
     }
+    
+    
+    
     
 }
