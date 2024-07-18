@@ -392,7 +392,7 @@
                     <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
                         <div class="team-item text-center rounded overflow-hidden">
                             <div class="rounded-circle overflow-hidden m-4">
-                                <img class="img-fluid" src="img/david.jpeg" alt="" style="width: 83.4%">
+                                <img class="img-fluid" src="img/david.jpg" alt="" style="width: 83.4%">
                             </div>
                             <h5 class="mb-0">David Dominguez Ladera</h5>
                             <small>Desarrollador</small>
